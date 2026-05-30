@@ -266,10 +266,10 @@ em { font-style: normal; color: var(--accent); }
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em;
   white-space: nowrap;
 }
-.vtag--1 { top: 8%; left: 2%; background: var(--accent); color: white; transform: rotate(-3deg); animation: float1 6s ease-in-out infinite; }
-.vtag--2 { top: 15%; right: 0%; background: var(--dark); color: white; transform: rotate(2deg); animation: float2 8s ease-in-out infinite; }
-.vtag--3 { bottom: 20%; left: 0%; background: var(--gold); color: white; transform: rotate(-2deg); animation: float3 10s ease-in-out infinite; }
-.vtag--4 { bottom: 10%; right: 2%; background: var(--cream-2); color: var(--dark); border: 1.5px solid var(--border-2); transform: rotate(3deg); animation: float1 7s ease-in-out infinite reverse; }
+.vtag--1 { top: 6%; left: 4%; background: var(--accent); color: white; transform: rotate(-3deg); animation: float1 6s ease-in-out infinite; }
+.vtag--2 { top: 6%; right: 4%; background: var(--dark); color: white; transform: rotate(2deg); animation: float2 8s ease-in-out infinite; }
+.vtag--3 { bottom: 6%; left: 4%; background: var(--gold); color: white; transform: rotate(-2deg); animation: float3 10s ease-in-out infinite; }
+.vtag--4 { bottom: 6%; right: 4%; background: var(--cream-2); color: var(--dark); border: 1.5px solid var(--border-2); transform: rotate(3deg); animation: float1 7s ease-in-out infinite reverse; }
 .reg-mark { position: absolute; z-index: 20; opacity: 0.65; }
 .reg-tl { top: 2%; left: 2%; }
 .reg-br { bottom: 2%; right: 2%; }
