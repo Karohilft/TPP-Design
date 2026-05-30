@@ -302,8 +302,9 @@ em { font-style: normal; color: var(--accent); }
 }
 .promise-item__icon {
   width: 44px; height: 44px; border-radius: var(--r-sm);
-  background: var(--accent-dim); border: 1.5px solid rgba(217,78,30,0.18);
+  background: rgba(217,78,30,0.12); border: 1.5px solid rgba(217,78,30,0.30);
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  min-width: 44px;
 }
 .promise-item__icon svg { width: 20px; height: 20px; color: var(--accent); }
 .promise-item strong { display: block; font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
