@@ -105,7 +105,10 @@ em { font-style: normal; color: var(--accent); }
   display: flex; align-items: center; gap: 10px;
   flex-shrink: 0; text-decoration: none;
 }
-.logo-mark { flex-shrink: 0; }
+.logo-bar {
+  width: 4px; height: 34px; background: var(--accent);
+  border-radius: 3px; flex-shrink: 0;
+}
 .logo-text { display: flex; flex-direction: column; gap: 0; line-height: 1; }
 .logo-tpp {
   font-family: var(--font-display); font-weight: 800;
@@ -613,8 +616,8 @@ a.cdetail:hover { border-color: rgba(217,78,30,0.3); transform: translateX(4px);
   .hero__inner { grid-template-columns: 1fr; padding-top: 20px; }
   .hero__visual { display: none; }
   .hero__scroll-hint { display: none; }
-  .hl--top { font-size: 1.1rem; }
-  .hl--big { font-size: clamp(2.8rem, 11vw, 4rem); }
+  .hl--top { font-size: 1rem; }
+  .hl--big { font-size: clamp(1.9rem, 7.5vw, 3rem); overflow-wrap: break-word; }
 
   .promise-bar__inner { flex-direction: column; gap: 0; }
   .promise-item { padding: 16px 20px; }
