@@ -102,22 +102,38 @@ em { font-style: normal; color: var(--accent); }
   padding: 0 var(--px); max-width: var(--max-w); margin: 0 auto;
 }
 .nav__logo {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center;
   flex-shrink: 0; text-decoration: none;
 }
-.logo-bar {
-  width: 4px; height: 34px; background: var(--accent);
-  border-radius: 3px; flex-shrink: 0;
+/* Sport-Badge logo: parallelogram with red stripe */
+.logo-badge {
+  background: var(--dark);
+  clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);
+  padding: 0 22px 0 16px;
+  height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-.logo-text { display: flex; flex-direction: column; gap: 0; line-height: 1; }
+.logo-badge::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 9px;
+  background: var(--accent);
+}
+.logo-badge-inner {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0; line-height: 1; padding-top: 7px;
+}
 .logo-tpp {
   font-family: var(--font-display); font-weight: 800;
-  font-size: 1.25rem; color: var(--dark); letter-spacing: 0.05em;
+  font-size: 1.1rem; color: white; letter-spacing: 0.1em;
+  line-height: 1;
 }
 .logo-design {
-  font-family: var(--font-display); font-weight: 600;
-  font-size: 0.62rem; color: var(--mid); letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 0.42rem; color: rgba(255,255,255,0.65); letter-spacing: 0.3em;
+  text-transform: uppercase; margin-top: 2px;
 }
 .nav__menu { display: flex; gap: 28px; margin-left: auto; }
 .nav__link {
