@@ -293,23 +293,22 @@ em { font-style: normal; color: var(--accent); }
   padding: 40px 0;
 }
 .promise-bar__inner {
-  display: flex; align-items: stretch; justify-content: space-between;
-  gap: 0; flex-wrap: wrap;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
 }
 .promise-item {
-  display: flex; align-items: center; gap: 16px;
-  flex: 1; min-width: 220px; padding: 12px 32px;
+  display: flex; flex-direction: row; align-items: center; gap: 16px;
+  padding: 16px 32px; border-right: 1px solid var(--border);
 }
+.promise-item:last-child { border-right: none; }
 .promise-item__icon {
-  width: 44px; height: 44px; border-radius: var(--r-sm);
+  width: 44px; height: 44px; min-width: 44px; border-radius: var(--r-sm);
   background: rgba(217,78,30,0.12); border: 1.5px solid rgba(217,78,30,0.30);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  min-width: 44px;
+  display: flex; align-items: center; justify-content: center;
 }
-.promise-item__icon svg { width: 20px; height: 20px; color: var(--accent); }
+.promise-item__icon svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
 .promise-item strong { display: block; font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
 .promise-item span { display: block; font-size: 0.8rem; color: var(--mid); line-height: 1.5; }
-.promise-sep { width: 1px; background: var(--border); margin: 8px 0; flex-shrink: 0; }
+.promise-sep { display: none; }
 
 /* ══ SECTION HEADER ══════════════════════════════ */
 .section-header { text-align: center; max-width: 620px; margin: 0 auto 72px; }
@@ -620,9 +619,9 @@ a.cdetail:hover { border-color: rgba(217,78,30,0.3); transform: translateX(4px);
   .hl--top { font-size: 1rem; }
   .hl--big { font-size: clamp(1.9rem, 7.5vw, 3rem); overflow-wrap: break-word; }
 
-  .promise-bar__inner { flex-direction: column; gap: 0; }
-  .promise-item { padding: 16px 20px; }
-  .promise-sep { width: 100%; height: 1px; margin: 0; }
+  .promise-bar__inner { grid-template-columns: 1fr; }
+  .promise-item { padding: 16px 20px; border-right: none; border-bottom: 1px solid var(--border); }
+  .promise-item:last-child { border-bottom: none; }
 
   .services__grid { grid-template-columns: 1fr; }
   .showcase__grid { grid-template-columns: 1fr; }
