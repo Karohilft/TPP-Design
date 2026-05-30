@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – TPP Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-page { padding: 140px 0 100px; min-height: 100vh; background: var(--cream); }
+    .legal-page h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
+    .legal-page h1 em { color: var(--accent); }
+    .legal-page .subtitle { font-size: 1rem; color: var(--mid); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .legal-block { margin-bottom: 2.5rem; }
+    .legal-block h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 0.75rem; }
+    .legal-block p, .legal-block address { font-size: 0.95rem; color: var(--mid); line-height: 1.8; font-style: normal; }
+    .legal-block a { color: var(--accent); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; color: var(--accent); margin-bottom: 2.5rem; transition: gap 0.2s ease; }
+    .back-link:hover { gap: 12px; }
+  </style>
+</head>
+<body>
+<nav class="nav scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="TPP Design – Startseite">
+      <svg class="logo-mark" width="42" height="36" viewBox="0 0 42 36" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="12" height="2.5" rx="1.2" fill="#D94E1E"/>
+        <rect x="5.75" y="1" width="2.5" height="10" rx="1.2" fill="#D94E1E"/>
+        <rect x="16" y="1" width="2.5" height="11" rx="1.2" fill="#D94E1E"/>
+        <path d="M18.5 1 Q24 1 24 4.5 Q24 8 18.5 8 L18.5 8" stroke="#D94E1E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <rect x="27" y="1" width="2.5" height="11" rx="1.2" fill="#D94E1E"/>
+        <path d="M29.5 1 Q35 1 35 4.5 Q35 8 29.5 8 L29.5 8" stroke="#D94E1E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <rect x="1" y="15" width="40" height="1.5" rx="0.75" fill="#D94E1E" opacity="0.25"/>
+      </svg>
+      <div class="logo-text"><span class="logo-tpp">TPP</span><span class="logo-design">DESIGN</span></div>
+    </a>
+  </div>
+</nav>
+
+<main class="legal-page">
+  <div class="container" style="max-width: 780px;">
+    <a href="/" class="back-link">← Zurück zur Startseite</a>
+    <h1>Impressum</h1>
+    <p class="subtitle">Angaben gemäß § 5 ECG (E-Commerce-Gesetz) und § 25 MedienG</p>
+
+    <div class="legal-block">
+      <h2>Unternehmensinhaber</h2>
+      <address>
+        <strong>TPP Design</strong><br>
+        [Vorname Nachname – bitte eintragen]<br>
+        [Straße Hausnummer]<br>
+        [PLZ Ort]<br>
+        Österreich
+      </address>
+    </div>
+
+    <div class="legal-block">
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: <a href="tel:+4367761482116">+43 677 61482116</a><br>
+        E-Mail: <a href="mailto:office@tpp-design.at">office@tpp-design.at</a><br>
+        Website: <a href="https://www.tpp-design.at">www.tpp-design.at</a>
+      </p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Unternehmensgegenstand</h2>
+      <p>Textildruck, Plotten, Großformatdruck, Werbetechnik</p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Berufsrecht</h2>
+      <p>Mitglied der Wirtschaftskammer Österreich (WKO)<br>
+      Gewerbeordnung: <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a></p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Haftungsausschluss</h2>
+      <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 ECG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Urheberrecht</h2>
+      <p>Die durch uns erstellten Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top: none; padding-top: 0;">
+      <p>© <span id="year"></span> TPP Design. Alle Rechte vorbehalten.</p>
+      <div class="footer__legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
