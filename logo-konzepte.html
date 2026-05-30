@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPP Design – Logo Konzepte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F3EF; color: #1C1816; }
+
+    .page-header {
+      padding: 60px 40px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      background: white;
+    }
+    .page-header h1 { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+    .page-header p { color: #6B6157; font-size: 0.95rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding: 2px;
+      background: #D9D5CF;
+    }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+    .logo-card {
+      background: white;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-card__info {
+      padding: 28px 32px 24px;
+      border-top: 1px solid #F0EDE8;
+    }
+    .logo-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; color: #D94E1E; text-transform: uppercase; margin-bottom: 6px; }
+    .logo-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; }
+    .logo-desc { font-size: 0.82rem; color: #6B6157; line-height: 1.6; }
+    .logo-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+    .tag { font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: #F2EDE3; color: #6B6157; }
+
+    /* ── Preview areas ────────────────────────── */
+    .preview-main {
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px 40px;
+      min-height: 260px;
+    }
+    .preview-variants {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      border-top: 1px solid #F0EDE8;
+    }
+    .variant {
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 16px;
+      border-right: 1px solid #F0EDE8;
+      font-size: 0.65rem; color: #9D9188; text-align: center;
+      flex-direction: column; gap: 12px;
+    }
+    .variant:last-child { border-right: none; }
+    .variant-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* BG colors for variants */
+    .bg-light { background: #FAF7F2; }
+    .bg-dark  { background: #1C1816; }
+    .bg-red   { background: #D94E1E; }
+
+    /* ══════════════════════════════════════════
+       LOGO 1 — DRUCKMARKE
+    ══════════════════════════════════════════ */
+    .l1-main { display: flex; align-items: center; gap: 18px; }
+    .l1-mark {
+      position: relative; width: 58px; height: 58px;
+      flex-shrink: 0;
+    }
+    .l1-text { line-height: 1; }
+    .l1-tpp {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 2rem; color: #1C1816; letter-spacing: 0.04em;
+      display: block;
+    }
+    .l1-design {
+      font-family: 'Syne', sans-serif; font-weight: 600;
+      font-size: 0.6rem; color: #6B6157; letter-spacing: 0.35em;
+      text-transform: uppercase; display: block; margin-top: 2px;
+    }
+
+    /* Variant dark */
+    .bg-dark .l1-tpp { color: white; }
+    .bg-dark .l1-design { color: rgba(255,255,255,0.5); }
+
+    /* Variant red */
+    .bg-red .l1-tpp { color: white; }
+    .bg-red .l1-design { color: rgba(255,255,255,0.7); }
+
+    /* ══════════════════════════════════════════
+       LOGO 2 — BLOCK REVERSE
+    ══════════════════════════════════════════ */
+    .l2-block {
+      background: #D94E1E; border-radius: 6px;
+      padding: 14px 22px 12px;
+      display: inline-flex; flex-direction: column;
+      align-items: flex-start; gap: 0;
+      line-height: 1;
+    }
+    .l2-tpp {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 2.2rem; color: white; letter-spacing: 0.06em;
+    }
+    .l2-design {
+      font-family: 'Syne', sans-serif; font-weight: 600;
+      font-size: 0.58rem; color: rgba(255,255,255,0.75); letter-spacing: 0.32em;
+      text-transform: uppercase; margin-top: 2px;
+    }
+    .l2-block--dark { background: #1C1816; }
+    .l2-block--outline {
+      background: transparent; border: 2px solid #D94E1E;
+      border-radius: 6px; padding: 14px 22px 12px;
+      display: inline-flex; flex-direction: column;
+      align-items: flex-start; gap: 0; line-height: 1;
+    }
+    .l2-block--outline .l2-tpp { color: #D94E1E; }
+    .l2-block--outline .l2-design { color: #6B6157; }
+
+    /* ══════════════════════════════════════════
+       LOGO 3 — MONOGRAMM
+    ══════════════════════════════════════════ */
+    .l3-wrap { display: flex; align-items: center; gap: 20px; }
+    .l3-text { line-height: 1; }
+    .l3-tpp {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 2.1rem; color: #1C1816; letter-spacing: 0.03em;
+      display: block;
+    }
+    .l3-rule { width: 100%; height: 1.5px; background: #D94E1E; margin: 5px 0; border-radius: 1px; }
+    .l3-design {
+      font-family: 'Syne', sans-serif; font-weight: 600;
+      font-size: 0.58rem; color: #6B6157; letter-spacing: 0.3em;
+      text-transform: uppercase; display: block;
+    }
+    .bg-dark .l3-tpp { color: white; }
+    .bg-dark .l3-design { color: rgba(255,255,255,0.5); }
+    .bg-red .l3-tpp { color: white; }
+    .bg-red .l3-rule { background: rgba(255,255,255,0.6); }
+    .bg-red .l3-design { color: rgba(255,255,255,0.7); }
+
+    /* ══════════════════════════════════════════
+       LOGO 4 — ICON WORDMARK
+    ══════════════════════════════════════════ */
+    .l4-wrap { display: flex; align-items: center; gap: 14px; }
+    .l4-text-wrap { line-height: 1; }
+    .l4-tpp {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 2rem; color: #1C1816; letter-spacing: 0.04em;
+      display: block;
+    }
+    .l4-bottom { display: flex; align-items: center; gap: 8px; margin-top: 5px; }
+    .l4-dot { width: 5px; height: 5px; border-radius: 50%; background: #D94E1E; flex-shrink: 0; }
+    .l4-design {
+      font-family: 'Syne', sans-serif; font-weight: 600;
+      font-size: 0.58rem; color: #6B6157; letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+    .bg-dark .l4-tpp { color: white; }
+    .bg-dark .l4-design { color: rgba(255,255,255,0.5); }
+    .bg-red .l4-tpp { color: white; }
+    .bg-red .l4-design { color: rgba(255,255,255,0.7); }
+    .bg-red .l4-dot { background: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>TPP Design — Logo Konzepte</h1>
+  <p>4 Varianten · Vektor · Druckfähig · Visitenkarte · Merchandise</p>
+</div>
+
+<div class="grid">
+
+  <!-- ══ KONZEPT 1 ══════════════════════════════ -->
+  <div class="logo-card">
+    <div class="preview-main bg-light">
+      <div class="l1-main">
+        <svg class="l1-mark" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer circle -->
+          <circle cx="29" cy="29" r="27" stroke="#D94E1E" stroke-width="2"/>
+          <!-- Registration crosshairs -->
+          <line x1="29" y1="0" x2="29" y2="10" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+          <line x1="29" y1="48" x2="29" y2="58" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="29" x2="10" y2="29" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+          <line x1="48" y1="29" x2="58" y2="29" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+          <!-- Inner circle dot -->
+          <circle cx="29" cy="29" r="5" fill="#D94E1E"/>
+        </svg>
+        <div class="l1-text">
+          <span class="l1-tpp">TPP</span>
+          <span class="l1-design">Design</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-variants">
+      <div class="variant bg-light">
+        <div class="l1-main" style="scale: 0.62; transform-origin: center;">
+          <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
+            <circle cx="29" cy="29" r="27" stroke="#D94E1E" stroke-width="2"/>
+            <line x1="29" y1="0" x2="29" y2="10" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="29" y1="48" x2="29" y2="58" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="0" y1="29" x2="10" y2="29" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="48" y1="29" x2="58" y2="29" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="29" cy="29" r="5" fill="#D94E1E"/>
+          </svg>
+          <div class="l1-text"><span class="l1-tpp">TPP</span><span class="l1-design">Design</span></div>
+        </div>
+        <span class="variant-label">Hell</span>
+      </div>
+      <div class="variant bg-dark">
+        <div class="l1-main" style="scale: 0.62; transform-origin: center;">
+          <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
+            <circle cx="29" cy="29" r="27" stroke="#D94E1E" stroke-width="2"/>
+            <line x1="29" y1="0" x2="29" y2="10" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="29" y1="48" x2="29" y2="58" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="0" y1="29" x2="10" y2="29" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="48" y1="29" x2="58" y2="29" stroke="#D94E1E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="29" cy="29" r="5" fill="#D94E1E"/>
+          </svg>
+          <div class="l1-text"><span class="l1-tpp" style="color:white">TPP</span><span class="l1-design" style="color:rgba(255,255,255,0.5)">Design</span></div>
+        </div>
+        <span class="variant-label" style="color:rgba(255,255,255,0.4)">Dunkel</span>
+      </div>
+      <div class="variant bg-red">
+        <svg width="32" height="32" viewBox="0 0 58 58" fill="none">
+          <circle cx="29" cy="29" r="27" stroke="white" stroke-width="2"/>
+          <line x1="29" y1="0" x2="29" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="29" y1="48" x2="29" y2="58" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="29" x2="10" y2="29" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="48" y1="29" x2="58" y2="29" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="29" cy="29" r="5" fill="white"/>
+        </svg>
+        <span class="variant-label" style="color:rgba(255,255,255,0.6)">Icon</span>
+      </div>
+    </div>
+
+    <div class="logo-card__info">
+      <div class="logo-num">Konzept 01</div>
+      <div class="logo-name">Druckmarke</div>
+      <div class="logo-desc">Das Passerkreuz — das wichtigste Symbol im Druckbereich. Perfekt für ein Druck- und Textilunternehmen. Erkennbar, professionell, einzigartig.</div>
+      <div class="logo-tags">
+        <span class="tag">Visitenkarte ✓</span>
+        <span class="tag">Stempel ✓</span>
+        <span class="tag">Stick/Druck ✓</span>
+        <span class="tag">Favicon ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KONZEPT 2 ══════════════════════════════ -->
+  <div class="logo-card">
+    <div class="preview-main bg-light">
+      <div class="l2-block">
+        <span class="l2-tpp">TPP</span>
+        <span class="l2-design">Design</span>
+      </div>
+    </div>
+
+    <div class="preview-variants">
+      <div class="variant bg-light">
+        <div class="l2-block" style="padding: 9px 14px 8px; border-radius:4px;">
+          <span class="l2-tpp" style="font-size:1.3rem">TPP</span>
+          <span class="l2-design" style="font-size:0.45rem">Design</span>
+        </div>
+        <span class="variant-label">Rot</span>
+      </div>
+      <div class="variant bg-dark">
+        <div class="l2-block l2-block--dark" style="padding: 9px 14px 8px; border-radius:4px;">
+          <span class="l2-tpp" style="font-size:1.3rem">TPP</span>
+          <span class="l2-design" style="font-size:0.45rem">Design</span>
+        </div>
+        <span class="variant-label" style="color:rgba(255,255,255,0.4)">Dunkel</span>
+      </div>
+      <div class="variant bg-red">
+        <div style="background:white; border-radius:4px; padding: 9px 14px 8px; line-height:1; display:inline-flex; flex-direction:column;">
+          <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:#D94E1E; letter-spacing:0.06em;">TPP</span>
+          <span style="font-family:'Syne',sans-serif; font-weight:600; font-size:0.45rem; color:#6B6157; letter-spacing:0.32em; text-transform:uppercase; margin-top:2px;">Design</span>
+        </div>
+        <span class="variant-label" style="color:rgba(255,255,255,0.6)">Weiß</span>
+      </div>
+    </div>
+
+    <div class="logo-card__info">
+      <div class="logo-num">Konzept 02</div>
+      <div class="logo-name">Solid Block</div>
+      <div class="logo-desc">Kraftvoll und direkt. Die TPP-Initialen in einem Farbblock — ideal für Stempel, Prägungen, Merchandise und überall wo man sofort Eindruck hinterlassen will.</div>
+      <div class="logo-tags">
+        <span class="tag">Merchandise ✓</span>
+        <span class="tag">Stempel ✓</span>
+        <span class="tag">Prägung ✓</span>
+        <span class="tag">1-Farb-Druck ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KONZEPT 3 ══════════════════════════════ -->
+  <div class="logo-card">
+    <div class="preview-main bg-light">
+      <div style="display:flex; align-items:center; gap:22px;">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Geometric T-P-P monogram -->
+          <!-- Left vertical bar (shared T stem + P stem) -->
+          <rect x="8" y="8" width="8" height="48" rx="2" fill="#1C1816"/>
+          <!-- T crossbar -->
+          <rect x="8" y="8" width="28" height="8" rx="2" fill="#1C1816"/>
+          <!-- P bowl top -->
+          <path d="M16 8 H38 Q50 8 50 20 Q50 32 38 32 H16" stroke="#D94E1E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- P bowl bottom -->
+          <path d="M16 32 H36 Q46 32 46 42 Q46 52 36 52 H16" stroke="#D94E1E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="l3-text">
+          <span class="l3-tpp">TPP</span>
+          <div class="l3-rule"></div>
+          <span class="l3-design">Design</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-variants">
+      <div class="variant bg-light">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
+          <rect x="8" y="8" width="8" height="48" rx="2" fill="#1C1816"/>
+          <rect x="8" y="8" width="28" height="8" rx="2" fill="#1C1816"/>
+          <path d="M16 8 H38 Q50 8 50 20 Q50 32 38 32 H16" stroke="#D94E1E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M16 32 H36 Q46 32 46 42 Q46 52 36 52 H16" stroke="#D94E1E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span class="variant-label">Standard</span>
+      </div>
+      <div class="variant bg-dark">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
+          <rect x="8" y="8" width="8" height="48" rx="2" fill="white"/>
+          <rect x="8" y="8" width="28" height="8" rx="2" fill="white"/>
+          <path d="M16 8 H38 Q50 8 50 20 Q50 32 38 32 H16" stroke="#D94E1E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M16 32 H36 Q46 32 46 42 Q46 52 36 52 H16" stroke="#D94E1E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span class="variant-label" style="color:rgba(255,255,255,0.4)">Dunkel</span>
+      </div>
+      <div class="variant bg-red">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
+          <rect x="8" y="8" width="8" height="48" rx="2" fill="white"/>
+          <rect x="8" y="8" width="28" height="8" rx="2" fill="white"/>
+          <path d="M16 8 H38 Q50 8 50 20 Q50 32 38 32 H16" stroke="rgba(255,255,255,0.7)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M16 32 H36 Q46 32 46 42 Q46 52 36 52 H16" stroke="rgba(255,255,255,0.7)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span class="variant-label" style="color:rgba(255,255,255,0.6)">Rot</span>
+      </div>
+    </div>
+
+    <div class="logo-card__info">
+      <div class="logo-num">Konzept 03</div>
+      <div class="logo-name">Buchstaben-Marke</div>
+      <div class="logo-desc">Ein geometrisches Monogramm aus T und zwei P's — die schwarze Struktur mit roten Bögen erzeugt ein unverwechselbares Zeichen, das auch allein als Icon funktioniert.</div>
+      <div class="logo-tags">
+        <span class="tag">App Icon ✓</span>
+        <span class="tag">Stickerei ✓</span>
+        <span class="tag">Visitenkarte ✓</span>
+        <span class="tag">Skalierbar ✓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KONZEPT 4 ══════════════════════════════ -->
+  <div class="logo-card">
+    <div class="preview-main bg-light">
+      <div style="text-align: center; line-height:1;">
+        <div style="display:flex; align-items:baseline; gap:0; justify-content:center;">
+          <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:3.8rem; color:#1C1816; letter-spacing:-0.02em; line-height:1;">T</span>
+          <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:3.8rem; color:#D94E1E; letter-spacing:-0.02em; line-height:1;">PP</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:6px;">
+          <div style="height:1px; width:30px; background:#D94E1E; border-radius:1px;"></div>
+          <span style="font-family:'Syne',sans-serif; font-weight:600; font-size:0.6rem; color:#6B6157; letter-spacing:0.38em; text-transform:uppercase;">Design</span>
+          <div style="height:1px; width:30px; background:#D94E1E; border-radius:1px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-variants">
+      <div class="variant bg-light">
+        <div style="text-align:center; line-height:1;">
+          <div style="display:flex; align-items:baseline; gap:0; justify-content:center;">
+            <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:#1C1816; letter-spacing:-0.02em; line-height:1;">T</span>
+            <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:#D94E1E; letter-spacing:-0.02em; line-height:1;">PP</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-top:4px;">
+            <div style="height:1px; width:14px; background:#D94E1E;"></div>
+            <span style="font-family:'Syne',sans-serif; font-weight:600; font-size:0.45rem; color:#6B6157; letter-spacing:0.3em; text-transform:uppercase;">Design</span>
+            <div style="height:1px; width:14px; background:#D94E1E;"></div>
+          </div>
+        </div>
+        <span class="variant-label">Hell</span>
+      </div>
+      <div class="variant bg-dark">
+        <div style="text-align:center; line-height:1;">
+          <div style="display:flex; align-items:baseline; gap:0; justify-content:center;">
+            <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:white; letter-spacing:-0.02em; line-height:1;">T</span>
+            <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:#D94E1E; letter-spacing:-0.02em; line-height:1;">PP</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-top:4px;">
+            <div style="height:1px; width:14px; background:#D94E1E;"></div>
+            <span style="font-family:'Syne',sans-serif; font-weight:600; font-size:0.45rem; color:rgba(255,255,255,0.4); letter-spacing:0.3em; text-transform:uppercase;">Design</span>
+            <div style="height:1px; width:14px; background:#D94E1E;"></div>
+          </div>
+        </div>
+        <span class="variant-label" style="color:rgba(255,255,255,0.4)">Dunkel</span>
+      </div>
+      <div class="variant bg-red">
+        <div style="text-align:center; line-height:1;">
+          <div style="display:flex; align-items:baseline; gap:0; justify-content:center;">
+            <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:white; letter-spacing:-0.02em; line-height:1;">T</span>
+            <span style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; color:rgba(255,255,255,0.7); letter-spacing:-0.02em; line-height:1;">PP</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-top:4px;">
+            <div style="height:1px; width:14px; background:rgba(255,255,255,0.5);"></div>
+            <span style="font-family:'Syne',sans-serif; font-weight:600; font-size:0.45rem; color:rgba(255,255,255,0.6); letter-spacing:0.3em; text-transform:uppercase;">Design</span>
+            <div style="height:1px; width:14px; background:rgba(255,255,255,0.5);"></div>
+          </div>
+        </div>
+        <span class="variant-label" style="color:rgba(255,255,255,0.6)">Rot</span>
+      </div>
+    </div>
+
+    <div class="logo-card__info">
+      <div class="logo-num">Konzept 04</div>
+      <div class="logo-name">Buchstaben-Kontrast</div>
+      <div class="logo-desc">Das "T" in Schwarz, "PP" in kräftigem Rot — ein typografischer Blickfang mit Wiedererkennungswert. Die geteilte Farbe macht den Namen unvergesslich.</div>
+      <div class="logo-tags">
+        <span class="tag">Visitenkarte ✓</span>
+        <span class="tag">Textile ✓</span>
+        <span class="tag">Digital ✓</span>
+        <span class="tag">Zeitlos ✓</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="padding: 40px; text-align:center; color:#9D9188; font-size:0.8rem;">
+  Alle Konzepte sind Vektoren (SVG) · skalierbar von Favicon bis Großformat · einzel- und mehrfarbig verfügbar
+</div>
+
+</body>
+</html>
