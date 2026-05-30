@@ -107,8 +107,8 @@ em { font-style: normal; color: var(--accent); }
 }
 .logo-mark { display: flex; flex-direction: column; align-items: center; gap: 0; line-height: 1; }
 .logo-letters { display: flex; align-items: baseline; gap: 0; line-height: 1; }
-.logo-t  { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--dark); letter-spacing: -0.02em; }
-.logo-pp { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--accent); letter-spacing: -0.02em; }
+.logo-t  { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; color: var(--dark); letter-spacing: -0.02em; }
+.logo-pp { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; color: var(--accent); letter-spacing: -0.02em; }
 .logo-sub { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
 .logo-line { height: 1px; width: 16px; background: var(--accent); border-radius: 1px; }
 .logo-design {
@@ -237,9 +237,9 @@ em { font-style: normal; color: var(--accent); }
   z-index: 10;
 }
 .tshirt { width: 80%; height: 80%; }
-@keyframes float1 { 0%,100%{transform:rotate(-7deg) translateY(0)} 50%{transform:rotate(-7deg) translateY(-10px)} }
-@keyframes float2 { 0%,100%{transform:rotate(5deg) translateY(0)} 50%{transform:rotate(5deg) translateY(8px)} }
-@keyframes float3 { 0%,100%{transform:rotate(-2deg) translateY(0)} 50%{transform:rotate(-2deg) translateY(-6px)} }
+@keyframes float1 { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-8px)} }
+@keyframes float2 { 0%,100%{transform:translateY(0)}   50%{transform:translateY(8px)} }
+@keyframes float3 { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-6px)} }
 
 .vtag {
   position: absolute; z-index: 20;
@@ -247,10 +247,10 @@ em { font-style: normal; color: var(--accent); }
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em;
   white-space: nowrap;
 }
-.vtag--1 { top: 6%; left: 4%; background: var(--accent); color: white; transform: rotate(-3deg); animation: float1 6s ease-in-out infinite; }
-.vtag--2 { top: 6%; right: 4%; background: var(--dark); color: white; transform: rotate(2deg); animation: float2 8s ease-in-out infinite; }
-.vtag--3 { bottom: 6%; left: 4%; background: var(--gold); color: white; transform: rotate(-2deg); animation: float3 10s ease-in-out infinite; }
-.vtag--4 { bottom: 6%; right: 4%; background: var(--cream-2); color: var(--dark); border: 1.5px solid var(--border-2); transform: rotate(3deg); animation: float1 7s ease-in-out infinite reverse; }
+.vtag--1 { top: 4%;   left: 2%;  background: var(--accent);  color: white;        animation: float1 6s ease-in-out infinite; }
+.vtag--2 { top: 4%;   right: 2%; background: var(--dark);    color: white;        animation: float2 8s ease-in-out infinite; }
+.vtag--3 { bottom: 4%; left: 2%; background: var(--gold);    color: white;        animation: float3 10s ease-in-out infinite; }
+.vtag--4 { bottom: 4%; right: 2%; background: var(--cream-2); color: var(--dark); border: 1.5px solid var(--border-2); animation: float1 7s ease-in-out infinite reverse; }
 .reg-mark { position: absolute; z-index: 20; opacity: 0.65; }
 .reg-tl { top: 2%; left: 2%; }
 .reg-br { bottom: 2%; right: 2%; }
