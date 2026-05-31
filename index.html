@@ -456,7 +456,11 @@
           </div>
         </div>
       </div>
-      <form class="contact-form reveal" id="contactForm" novalidate>
+      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/office@tpp-design.at" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Neue Anfrage – TPP Design">
+        <input type="hidden" name="_next" value="https://tpp-design.at/danke.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
         <div class="form-row">
           <div class="form-group"><label for="fname">Vorname *</label><input type="text" id="fname" name="fname" placeholder="Max" autocomplete="given-name" required></div>
           <div class="form-group"><label for="lname">Nachname *</label><input type="text" id="lname" name="lname" placeholder="Mustermann" autocomplete="family-name" required></div>

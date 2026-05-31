@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vielen Dank – TPP Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .thank-page {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: var(--cream); padding: 40px 20px;
+    }
+    .thank-card {
+      background: white; border: 1.5px solid var(--border);
+      border-radius: var(--r-xl); padding: 64px 52px;
+      max-width: 520px; width: 100%; text-align: center;
+      box-shadow: 0 20px 60px rgba(28,24,22,0.06);
+    }
+    .thank-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: rgba(217,78,30,0.08); display: flex; align-items: center;
+      justify-content: center; color: var(--accent); margin: 0 auto 28px;
+    }
+    .thank-card h1 {
+      font-family: var(--font-display); font-size: 2rem; font-weight: 800;
+      color: var(--dark); margin-bottom: 16px;
+    }
+    .thank-card p { font-size: 0.95rem; color: var(--mid); line-height: 1.75; margin-bottom: 12px; }
+    .thank-divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+    .thank-contact { font-size: 0.85rem; color: var(--light); line-height: 1.7; }
+    .thank-contact a { color: var(--accent); font-weight: 500; }
+    .thank-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; }
+  </style>
+</head>
+<body>
+<main class="thank-page">
+  <div class="thank-card">
+    <div class="thank-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+    </div>
+    <h1>Vielen Dank!</h1>
+    <p>Wir haben Ihre Anfrage erhalten und melden uns in der Regel innerhalb von <strong>1–2 Werktagen</strong> bei Ihnen.</p>
+    <hr class="thank-divider">
+    <p class="thank-contact">
+      Bei dringenden Anfragen erreichen Sie uns direkt:<br>
+      <a href="tel:+4367761482116">+43 677 61482116</a> &nbsp;·&nbsp;
+      <a href="mailto:office@tpp-design.at">office@tpp-design.at</a>
+    </p>
+    <a href="/" class="btn btn--primary thank-back">Zurück zur Startseite</a>
+  </div>
+</main>
+</body>
+</html>
