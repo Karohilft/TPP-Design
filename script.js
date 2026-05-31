@@ -107,16 +107,23 @@
       submitBtn.disabled = true;
       btnText.textContent = 'Wird gesendet …';
 
-      /*
-        TODO: Echtes Formular-Backend einbinden.
-        Option A – Formspree:   form action="https://formspree.io/f/DEIN-CODE" method="POST"
-        Option B – Netlify:     <form netlify>
-        Option C – PHP-Mailer:  fetch('/mailer.php', { method:'POST', body: new FormData(form) })
-      */
-      setTimeout(() => {
-        form.style.display = 'none';
-        successEl.hidden = false;
-      }, 1100);
+      fetch('/mailer.php', { method: 'POST', body: new FormData(form) })
+        .then(r => r.json())
+        .then(data => {
+          if (data.ok) {
+            form.style.display = 'none';
+            successEl.hidden = false;
+          } else {
+            btnText.textContent = 'Angebot anfordern';
+            submitBtn.disabled = false;
+            alert('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@tpp-design.at');
+          }
+        })
+        .catch(() => {
+          btnText.textContent = 'Angebot anfordern';
+          submitBtn.disabled = false;
+          alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
+        });
     });
 
     form.querySelectorAll('input, select, textarea').forEach(f => {
