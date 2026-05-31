@@ -2,34 +2,28 @@
   <!-- Background -->
   <rect width="500" height="500" fill="#FAF7F2"/>
 
-  <!-- T (dark) -->
-  <text x="148" y="310"
+  <!-- TPP centered, T dark + PP red -->
+  <text x="250" y="295"
         font-family="Arial Black, Arial, sans-serif"
         font-weight="900"
-        font-size="210"
-        fill="#1C1816"
-        letter-spacing="-6">T</text>
-
-  <!-- PP (red) -->
-  <text x="243" y="310"
-        font-family="Arial Black, Arial, sans-serif"
-        font-weight="900"
-        font-size="210"
-        fill="#D94E1E"
-        letter-spacing="-6">PP</text>
+        font-size="190"
+        text-anchor="middle"
+        letter-spacing="-4">
+    <tspan fill="#1C1816">T</tspan><tspan fill="#D94E1E">PP</tspan>
+  </text>
 
   <!-- Left line -->
-  <rect x="118" y="332" width="62" height="3" rx="1.5" fill="#D94E1E"/>
+  <rect x="108" y="322" width="58" height="3" rx="1.5" fill="#D94E1E"/>
 
-  <!-- DESIGN text -->
-  <text x="250" y="358"
+  <!-- DESIGN -->
+  <text x="250" y="352"
         font-family="Arial, sans-serif"
         font-weight="700"
-        font-size="32"
+        font-size="28"
         fill="#6B6157"
-        letter-spacing="14"
+        letter-spacing="12"
         text-anchor="middle">DESIGN</text>
 
   <!-- Right line -->
-  <rect x="320" y="332" width="62" height="3" rx="1.5" fill="#D94E1E"/>
+  <rect x="334" y="322" width="58" height="3" rx="1.5" fill="#D94E1E"/>
 </svg>
