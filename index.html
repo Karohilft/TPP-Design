@@ -456,10 +456,8 @@
           </div>
         </div>
       </div>
-      <form class="contact-form reveal" id="contactForm" novalidate>
-        <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-KEY-HIER">
-        <input type="hidden" name="subject" value="Neue Anfrage – TPP Design">
-        <input type="hidden" name="from_name" value="TPP Design Website">
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/DEIN-FORMSPREE-CODE" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Neue Anfrage – TPP Design">
         <div class="form-row">
           <div class="form-group"><label for="fname">Vorname *</label><input type="text" id="fname" name="fname" placeholder="Max" autocomplete="given-name" required></div>
           <div class="form-group"><label for="lname">Nachname *</label><input type="text" id="lname" name="lname" placeholder="Mustermann" autocomplete="family-name" required></div>

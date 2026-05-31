@@ -108,17 +108,14 @@
       submitBtn.disabled = true;
       btnText.textContent = 'Wird gesendet …';
 
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-
-      fetch('https://api.web3forms.com/submit', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       })
         .then(r => r.json())
-        .then(res => {
-          if (res.success) {
+        .then(data => {
+          if (data.ok) {
             form.style.display = 'none';
             successEl.hidden = false;
           } else {
