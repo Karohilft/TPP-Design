@@ -107,16 +107,23 @@
       submitBtn.disabled = true;
       btnText.textContent = 'Wird gesendet …';
 
-      fetch('/mailer.php', { method: 'POST', body: new FormData(form) })
+      const data = {};
+      new FormData(form).forEach((v, k) => data[k] = v);
+
+      fetch('https://formsubmit.co/ajax/office@tpp-design.at', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
         .then(r => r.json())
-        .then(data => {
-          if (data.ok) {
+        .then(res => {
+          if (res.success === 'true' || res.success === true) {
             form.style.display = 'none';
             successEl.hidden = false;
           } else {
             btnText.textContent = 'Angebot anfordern';
             submitBtn.disabled = false;
-            alert('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@tpp-design.at');
+            alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
           }
         })
         .catch(() => {
