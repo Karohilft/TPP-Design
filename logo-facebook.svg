@@ -1,29 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
-  <!-- Background -->
-  <rect width="500" height="500" fill="#FAF7F2"/>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');
+    </style>
+    <clipPath id="circle">
+      <circle cx="250" cy="250" r="250"/>
+    </clipPath>
+  </defs>
 
-  <!-- TPP centered, T dark + PP red -->
-  <text x="250" y="295"
-        font-family="Arial Black, Arial, sans-serif"
-        font-weight="900"
-        font-size="190"
-        text-anchor="middle"
-        letter-spacing="-4">
-    <tspan fill="#1C1816">T</tspan><tspan fill="#D94E1E">PP</tspan>
-  </text>
+  <!-- Dark background -->
+  <circle cx="250" cy="250" r="250" fill="#1C1816"/>
+
+  <!-- T (white/cream) -->
+  <text x="148" y="300"
+        font-family="'Syne', 'Arial Black', Arial, sans-serif"
+        font-weight="800"
+        font-size="185"
+        fill="#FAF7F2"
+        letter-spacing="-4">T</text>
+
+  <!-- PP (red) -->
+  <text x="255" y="300"
+        font-family="'Syne', 'Arial Black', Arial, sans-serif"
+        font-weight="800"
+        font-size="185"
+        fill="#D94E1E"
+        letter-spacing="-4">PP</text>
 
   <!-- Left line -->
-  <rect x="108" y="322" width="58" height="3" rx="1.5" fill="#D94E1E"/>
+  <rect x="120" y="325" width="52" height="2.5" rx="1.2" fill="#D94E1E"/>
 
   <!-- DESIGN -->
-  <text x="250" y="352"
-        font-family="Arial, sans-serif"
-        font-weight="700"
-        font-size="28"
-        fill="#6B6157"
-        letter-spacing="12"
+  <text x="250" y="354"
+        font-family="'Syne', 'Arial Black', Arial, sans-serif"
+        font-weight="600"
+        font-size="24"
+        fill="rgba(255,255,255,0.5)"
+        letter-spacing="11"
         text-anchor="middle">DESIGN</text>
 
   <!-- Right line -->
-  <rect x="334" y="322" width="58" height="3" rx="1.5" fill="#D94E1E"/>
+  <rect x="328" y="325" width="52" height="2.5" rx="1.2" fill="#D94E1E"/>
 </svg>
