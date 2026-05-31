@@ -525,15 +525,18 @@ a.cdetail:hover { border-color: rgba(217,78,30,0.3); transform: translateX(4px);
 .form-success p { font-size: 0.88rem; color: rgba(34,197,94,0.8); }
 
 /* ══ FOOTER ══════════════════════════════════════ */
-.footer { background: var(--dark-2); padding: 72px 0 36px; }
+.footer { background: #2A2420; padding: 72px 0 36px; }
 .footer__top {
   display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.3fr; gap: 48px;
   padding-bottom: 52px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px;
 }
 .footer__brand .nav__logo { margin-bottom: 16px; }
 .footer__brand > p { font-size: 0.84rem; color: rgba(255,255,255,0.4); line-height: 1.75; max-width: 230px; }
-.footer__brand .logo-tpp { color: white; }
-.footer__brand .logo-design { color: rgba(255,255,255,0.4); }
+.footer__brand .logo-t { color: rgba(255,255,255,0.92); }
+.footer__brand .logo-pp { color: var(--accent); }
+.footer__brand .logo-design { color: rgba(255,255,255,0.38); }
+.footer__brand .logo-line { background: var(--accent); }
+.footer__abbr { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-top: 8px; margin-bottom: 16px; }
 .footer__col h4 {
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(255,255,255,0.35); margin-bottom: 16px;
