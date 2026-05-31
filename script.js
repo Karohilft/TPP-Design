@@ -87,10 +87,6 @@
   const submitBtn = document.getElementById('submitBtn');
   const btnText   = document.getElementById('btnText');
 
-  if (new URLSearchParams(window.location.search).get('gesendet') === '1' && form && successEl) {
-    form.style.display = 'none';
-    successEl.hidden = false;
-  }
 
   if (form) {
     form.addEventListener('submit', e => {
@@ -111,7 +107,31 @@
 
       submitBtn.disabled = true;
       btnText.textContent = 'Wird gesendet …';
-      form.submit();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(r => r.json())
+        .then(res => {
+          if (res.success) {
+            form.style.display = 'none';
+            successEl.hidden = false;
+          } else {
+            btnText.textContent = 'Angebot anfordern';
+            submitBtn.disabled = false;
+            alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
+          }
+        })
+        .catch(() => {
+          btnText.textContent = 'Angebot anfordern';
+          submitBtn.disabled = false;
+          alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
+        });
     });
 
     form.querySelectorAll('input, select, textarea').forEach(f => {
