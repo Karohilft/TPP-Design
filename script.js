@@ -115,9 +115,10 @@
       })
         .then(r => r.json())
         .then(data => {
-          if (data.ok) {
+          if (data.ok || data.success) {
             form.style.display = 'none';
             successEl.hidden = false;
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
           } else {
             btnText.textContent = 'Angebot anfordern';
             submitBtn.disabled = false;
