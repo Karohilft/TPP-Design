@@ -3,38 +3,36 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;800&amp;display=swap');
     </style>
-    <clipPath id="circle">
-      <circle cx="250" cy="250" r="250"/>
-    </clipPath>
   </defs>
 
   <!-- Cream background -->
   <rect width="500" height="500" fill="#FAF7F2"/>
 
-  <!-- TPP letters centered -->
+  <!-- TPP: T dark, PP red, Syne 800, centered -->
   <text
-    x="250" y="280"
+    x="250" y="288"
     font-family="'Syne', 'Arial Black', Arial, sans-serif"
     font-weight="800"
-    font-size="190"
-    letter-spacing="-8"
+    font-size="180"
+    letter-spacing="-4"
     text-anchor="middle">
     <tspan fill="#1C1816">T</tspan><tspan fill="#D94E1E">PP</tspan>
   </text>
 
+  <!-- Sub-row: line — DESIGN — line, centered at x=250 -->
   <!-- Left line -->
-  <rect x="108" y="308" width="60" height="3" rx="1.5" fill="#D94E1E"/>
+  <rect x="108" y="312" width="50" height="2" rx="1" fill="#D94E1E"/>
 
-  <!-- DESIGN centered -->
+  <!-- DESIGN -->
   <text
     x="250" y="340"
     font-family="'Syne', 'Arial Black', Arial, sans-serif"
     font-weight="600"
-    font-size="26"
+    font-size="24"
     fill="#6B6157"
-    letter-spacing="12"
+    letter-spacing="11"
     text-anchor="middle">DESIGN</text>
 
   <!-- Right line -->
-  <rect x="332" y="308" width="60" height="3" rx="1.5" fill="#D94E1E"/>
+  <rect x="342" y="312" width="50" height="2" rx="1" fill="#D94E1E"/>
 </svg>
