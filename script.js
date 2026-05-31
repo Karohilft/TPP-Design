@@ -87,6 +87,11 @@
   const submitBtn = document.getElementById('submitBtn');
   const btnText   = document.getElementById('btnText');
 
+  if (new URLSearchParams(window.location.search).get('gesendet') === '1' && form && successEl) {
+    form.style.display = 'none';
+    successEl.hidden = false;
+  }
+
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault();
