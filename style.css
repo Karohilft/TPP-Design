@@ -162,7 +162,7 @@ em { font-style: normal; color: var(--accent); }
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--accent);
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.6rem;
 }
 .eyebrow-dot {
   width: 8px; height: 8px; border-radius: 50%;
