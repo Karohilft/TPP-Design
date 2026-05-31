@@ -89,7 +89,7 @@
 
 
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       let valid = true;
 
@@ -108,28 +108,26 @@
       submitBtn.disabled = true;
       btnText.textContent = 'Wird gesendet …';
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(r => r.json())
-        .then(data => {
-          if (data.ok || data.success) {
-            form.style.display = 'none';
-            successEl.hidden = false;
-            successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          } else {
-            btnText.textContent = 'Angebot anfordern';
-            submitBtn.disabled = false;
-            alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
-          }
-        })
-        .catch(() => {
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successEl.hidden = false;
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
           btnText.textContent = 'Angebot anfordern';
           submitBtn.disabled = false;
           alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
-        });
+        }
+      } catch {
+        btnText.textContent = 'Angebot anfordern';
+        submitBtn.disabled = false;
+        alert('Fehler beim Senden. Bitte schreiben Sie uns direkt an office@tpp-design.at');
+      }
     });
 
     form.querySelectorAll('input, select, textarea').forEach(f => {
